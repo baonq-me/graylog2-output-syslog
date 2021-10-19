@@ -53,6 +53,8 @@ public class SyslogOutput implements MessageOutput {
 		try {
 			if (fmt == null || fmt.equalsIgnoreCase("plain")) {
 				return new PlainSender();
+			} else if (fmt == null || fmt.equalsIgnoreCase("raw")) {
+				return new RawSender();
 			} else
 			if (fmt == null || fmt.equalsIgnoreCase("transparent")) {
 				return new TransparentSyslogSender(conf);
@@ -188,7 +190,7 @@ public class SyslogOutput implements MessageOutput {
 		if (sender instanceof StructuredSender) {
 			// Always send via structured data
 			syslog.getConfig().setUseStructuredData(true);
-		} else if (sender instanceof PlainSender || sender instanceof CEFSender) {
+		} else if (sender instanceof PlainSender || sender instanceof RawSender|| sender instanceof CEFSender) {
 			// Will write this fields manually
 			syslog.getConfig().setSendLocalName(false);
 			syslog.getConfig().setSendLocalTimestamp(false);
@@ -296,6 +298,7 @@ public class SyslogOutput implements MessageOutput {
 			configurationRequest.addField(new TextField("port", "Syslog port", "514", "Syslog port on the remote host. Default is 514.", ConfigurationField.Optional.NOT_OPTIONAL));
 
 			HashMap<String, String> types = new HashMap<String, String>();
+			types.put("raw", "raw");
 			types.put("plain", "plain");
 			types.put("structured", "structured");
 			types.put("cef", "cef");
