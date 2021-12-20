@@ -1,4 +1,4 @@
-package com.wizecore.graylog2.plugin;
+package com.baonq.graylog2.plugin;
 
 import java.net.URI;
 import java.util.Collections;
@@ -8,7 +8,7 @@ import org.graylog2.plugin.PluginMetaData;
 import org.graylog2.plugin.ServerStatus.Capability;
 import org.graylog2.plugin.Version;
 
-public class SyslogOutputMetaData implements PluginMetaData {
+public class JsonLogOutputMetaData implements PluginMetaData {
 
 	@Override
 	public String getAuthor() {
@@ -22,7 +22,7 @@ public class SyslogOutputMetaData implements PluginMetaData {
 
 	@Override
 	public String getName() {
-		return "SyslogOutputPlugin";
+		return "JsonLogOutputPlugin";
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class SyslogOutputMetaData implements PluginMetaData {
 
 	@Override
 	public String getUniqueId() {
-		return SyslogOutput.class.getName();
+		return JsonLogOutput.class.getName();
 	}
 
 	@Override

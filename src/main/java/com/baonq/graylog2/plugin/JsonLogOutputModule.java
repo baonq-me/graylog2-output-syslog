@@ -1,4 +1,4 @@
-package com.wizecore.graylog2.plugin;
+package com.baonq.graylog2.plugin;
 
 import java.util.Collections;
 import java.util.Set;
@@ -10,7 +10,7 @@ import org.graylog2.plugin.outputs.MessageOutput.Factory;
 
 import com.google.inject.multibindings.MapBinder;
 
-public class SyslogOutputModule extends PluginModule {
+public class JsonLogOutputModule extends PluginModule {
 
 	@Override
 	public Set<? extends PluginConfigBean> getConfigBeans() {
@@ -20,6 +20,6 @@ public class SyslogOutputModule extends PluginModule {
 	@Override
 	protected void configure() {
 		MapBinder<String, Factory<? extends MessageOutput>> outputMapBinder = outputsMapBinder();
-		installOutput(outputMapBinder, SyslogOutput.class, SyslogOutput.Factory.class);
+		installOutput(outputMapBinder, JsonLogOutput.class, JsonLogOutput.Factory.class);
 	}
 }
