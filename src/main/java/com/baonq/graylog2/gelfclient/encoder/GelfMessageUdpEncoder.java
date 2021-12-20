@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient.encoder;
+package com.baonq.graylog2.gelfclient.encoder;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandler;

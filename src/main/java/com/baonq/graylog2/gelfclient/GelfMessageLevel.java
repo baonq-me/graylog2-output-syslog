@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient;
+package com.baonq.graylog2.gelfclient;
 
 /**
  * The log level of a {@link GelfMessage}.

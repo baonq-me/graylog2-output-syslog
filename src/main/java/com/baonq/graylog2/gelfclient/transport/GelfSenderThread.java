@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient.transport;
+package com.baonq.graylog2.gelfclient.transport;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
-import org.graylog2.gelfclient.GelfMessage;
-import org.graylog2.gelfclient.util.Uninterruptibles;
+import com.baonq.graylog2.gelfclient.GelfMessage;
+import com.baonq.graylog2.gelfclient.util.Uninterruptibles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

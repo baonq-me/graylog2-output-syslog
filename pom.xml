@@ -10,7 +10,7 @@
 
     <groupId>com.baonq.graylog2</groupId>
     <artifactId>graylog-output-json</artifactId>
-    <version>4.1.3</version>
+    <version>4.1.6</version>
     <packaging>jar</packaging>
 
     <name>graylog-output-json</name>

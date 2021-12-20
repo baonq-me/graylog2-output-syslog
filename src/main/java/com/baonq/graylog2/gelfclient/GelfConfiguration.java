@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient;
+package com.baonq.graylog2.gelfclient;
+
+import com.baonq.graylog2.gelfclient.transport.AbstractGelfTransport;
+import com.baonq.graylog2.gelfclient.transport.GelfTransport;
 
 import java.io.File;
 import java.net.InetSocketAddress;
 
 /**
- * The configuration used by a {@link org.graylog2.gelfclient.transport.GelfTransport}.
+ * The configuration used by a {@link GelfTransport}.
  */
 public class GelfConfiguration {
     private static final int DEFAULT_PORT = 12201;
@@ -360,7 +363,7 @@ public class GelfConfiguration {
      * Set number of worker threads that will be processing gelf messages.
      * @param threads number of worker threads.
      *                A value of {@code 0} sets number of threads to default equal to number of processors * 2.
-     *                For details see: {@link org.graylog2.gelfclient.transport.AbstractGelfTransport}
+     *                For details see: {@link AbstractGelfTransport}
      * @return {@code this} instance
      */
     public GelfConfiguration threads(int threads) {

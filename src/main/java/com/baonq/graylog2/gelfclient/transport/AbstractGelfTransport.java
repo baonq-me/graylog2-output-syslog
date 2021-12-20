@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient.transport;
+package com.baonq.graylog2.gelfclient.transport;
 
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.util.concurrent.DefaultThreadFactory;
-import org.graylog2.gelfclient.GelfConfiguration;
-import org.graylog2.gelfclient.GelfMessage;
+import com.baonq.graylog2.gelfclient.GelfConfiguration;
+import com.baonq.graylog2.gelfclient.GelfMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

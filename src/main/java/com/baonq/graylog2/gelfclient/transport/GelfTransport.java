@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient.transport;
+package com.baonq.graylog2.gelfclient.transport;
 
-import org.graylog2.gelfclient.GelfMessage;
+import com.baonq.graylog2.gelfclient.GelfMessage;
 
 import java.util.concurrent.TimeUnit;
 

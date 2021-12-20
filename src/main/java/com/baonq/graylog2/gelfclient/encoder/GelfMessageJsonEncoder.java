@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient.encoder;
+package com.baonq.graylog2.gelfclient.encoder;
 
+import com.baonq.graylog2.gelfclient.GelfMessage;
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -23,7 +24,6 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
-import org.graylog2.gelfclient.GelfMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,6 +106,8 @@ public class GelfMessageJsonEncoder extends MessageToMessageEncoder<GelfMessage>
 
             jg.writeEndObject();
         }
+
+        out.write('\n');
 
         return out.toByteArray();
     }

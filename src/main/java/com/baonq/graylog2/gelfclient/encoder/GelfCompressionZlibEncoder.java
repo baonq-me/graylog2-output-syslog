@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 TORCH GmbH
+ * Copyright 2018 Graylog, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient.encoder;
+package com.baonq.graylog2.gelfclient.encoder;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -23,16 +23,16 @@ import io.netty.handler.codec.MessageToMessageEncoder;
 
 import java.io.ByteArrayOutputStream;
 import java.util.List;
-import java.util.zip.GZIPOutputStream;
+import java.util.zip.DeflaterOutputStream;
 
 /**
- * A Netty channel handler which compresses messages using a {@link GZIPOutputStream}.
+ * A Netty channel handler which compresses messages using a {@link DeflaterOutputStream}.
  */
-public class GelfCompressionGzipEncoder extends MessageToMessageEncoder<ByteBuf> {
+public class GelfCompressionZlibEncoder extends MessageToMessageEncoder<ByteBuf> {
     @Override
     protected void encode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
         try (final ByteArrayOutputStream bos = new ByteArrayOutputStream();
-             final GZIPOutputStream stream = new GZIPOutputStream(bos)) {
+             final DeflaterOutputStream stream = new DeflaterOutputStream(bos)) {
 
             stream.write(msg.array());
             stream.finish();

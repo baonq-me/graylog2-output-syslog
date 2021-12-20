@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 TORCH GmbH
+ * Copyright 2018 Graylog, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.baonq.graylog2.gelfclient;
 
-package org.graylog2.gelfclient;
-
-/**
- * The version of the <a href="http://graylog2.org/gelf#specs">GELF specification</a>
- * used for a {@link GelfMessage}.
- */
-public enum GelfMessageVersion {
-    V1_1("1.1");
-
-    private final String versionString;
-
-    GelfMessageVersion(String versionString) {
-        this.versionString = versionString;
-    }
-
-    @Override
-    public String toString() {
-        return versionString;
-    }
+public enum Compression {
+    GZIP, ZLIB, NONE
 }

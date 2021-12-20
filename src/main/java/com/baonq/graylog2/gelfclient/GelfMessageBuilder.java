@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient;
+package com.baonq.graylog2.gelfclient;
 
 import java.util.HashMap;
 import java.util.Map;

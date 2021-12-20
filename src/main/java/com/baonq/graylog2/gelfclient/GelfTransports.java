@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient;
+package com.baonq.graylog2.gelfclient;
 
-import org.graylog2.gelfclient.transport.GelfTcpTransport;
-import org.graylog2.gelfclient.transport.GelfTransport;
-import org.graylog2.gelfclient.transport.GelfUdpTransport;
+import com.baonq.graylog2.gelfclient.transport.GelfTcpTransport;
+import com.baonq.graylog2.gelfclient.transport.GelfTransport;
+import com.baonq.graylog2.gelfclient.transport.GelfUdpTransport;
 
 /**
  * Factory for building a {@link GelfTransport}.

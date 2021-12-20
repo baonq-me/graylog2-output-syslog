@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.graylog2.gelfclient.transport;
+package com.baonq.graylog2.gelfclient.transport;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -25,12 +25,12 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.socket.DatagramPacket;
 import io.netty.channel.socket.nio.NioDatagramChannel;
-import org.graylog2.gelfclient.GelfConfiguration;
-import org.graylog2.gelfclient.encoder.GelfCompressionGzipEncoder;
-import org.graylog2.gelfclient.encoder.GelfCompressionZlibEncoder;
-import org.graylog2.gelfclient.encoder.GelfMessageChunkEncoder;
-import org.graylog2.gelfclient.encoder.GelfMessageJsonEncoder;
-import org.graylog2.gelfclient.encoder.GelfMessageUdpEncoder;
+import com.baonq.graylog2.gelfclient.GelfConfiguration;
+import com.baonq.graylog2.gelfclient.encoder.GelfCompressionGzipEncoder;
+import com.baonq.graylog2.gelfclient.encoder.GelfCompressionZlibEncoder;
+import com.baonq.graylog2.gelfclient.encoder.GelfMessageChunkEncoder;
+import com.baonq.graylog2.gelfclient.encoder.GelfMessageJsonEncoder;
+import com.baonq.graylog2.gelfclient.encoder.GelfMessageUdpEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

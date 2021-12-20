@@ -47,6 +47,6 @@ public class JsonLogOutputMetaData implements PluginMetaData {
 
 	@Override
 	public Version getVersion() {
-		return new Version(4, 0, 8);
+		return new Version(4, 1, 6);
 	}
 }

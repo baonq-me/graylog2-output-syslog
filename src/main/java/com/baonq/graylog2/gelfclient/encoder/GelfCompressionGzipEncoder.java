@@ -13,26 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.graylog2.gelfclient.encoder;
+
+package com.baonq.graylog2.gelfclient.encoder;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
+import java.util.zip.GZIPOutputStream;
 
 /**
- * A Netty channel handler which adds a single null byte ({@code \0}).
+ * A Netty channel handler which compresses messages using a {@link GZIPOutputStream}.
  */
-public class GelfTcpFrameDelimiterEncoder extends MessageToMessageEncoder<ByteBuf> {
-
-    final private static byte[] CRLF_BYTES = new byte[] {'\r', '\n'};
-
+public class GelfCompressionGzipEncoder extends MessageToMessageEncoder<ByteBuf> {
     @Override
     protected void encode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
-        final ByteBuf nullByteBuffer = Unpooled.wrappedBuffer(CRLF_BYTES);
-        final ByteBuf byteBuf = Unpooled.copiedBuffer(msg, nullByteBuffer);
-        out.add(byteBuf);
+        try (final ByteArrayOutputStream bos = new ByteArrayOutputStream();
+             final GZIPOutputStream stream = new GZIPOutputStream(bos)) {
+
+            stream.write(msg.array());
+            stream.finish();
+
+            out.add(Unpooled.wrappedBuffer(bos.toByteArray()));
+        }
     }
 }
