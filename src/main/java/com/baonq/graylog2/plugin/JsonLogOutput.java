@@ -243,7 +243,7 @@ public class JsonLogOutput implements MessageOutput {
 		if (fieldTimeStamp instanceof DateTime) {
 			timestamp = (DateTime) fieldTimeStamp;
 		} else {
-			timestamp = Tools.nowUTC();
+			timestamp = new DateTime(Tools.getUTCTimestamp());
 		}
 
 		final GelfMessageLevel messageLevel = extractLevel(message.getField(Message.FIELD_LEVEL));

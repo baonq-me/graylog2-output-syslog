@@ -32,7 +32,7 @@ public class JsonLogOutputMetaData implements PluginMetaData {
 
 	@Override
 	public Version getRequiredVersion() {
-		return Version.from(2, 1, 1);
+		return new Version(2, 1, 1);
 	}
 
 	@Override
