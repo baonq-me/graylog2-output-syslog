@@ -182,7 +182,7 @@ public class JsonLogOutput implements MessageOutput {
 
 	@Override
 	public void write(final Message message) throws Exception {
-		LOG.info("Sent msg " + message.getId());
+		//LOG.debug("Sent msg " + message.getId());
 
 		GelfMessage gelfMessage = toGELFMessage(message);
 		//gelfMessage.setFullMessage(gelfMessage.getFullMessage() + "\r\n");
